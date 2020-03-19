@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+# 此配置信息会寻找远端仓库的文件名：client-dev.yml，并读取内部信息，而不是识别内部的信息 env:dev

@@ -1,0 +1,16 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+spring:  #远程仓库地址信息，以便从远程仓库拉取配置信息
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/pengwy/learning
+          username: 13683062216
+          password: lenovo12
+server:
+  port: 7000

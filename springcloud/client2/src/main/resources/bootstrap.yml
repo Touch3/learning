@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: client2
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+server:
+  port: 9000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000   #默认超时时间设置
+    callClient4:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000   #指定接口访问超时时间设置（注意在设置的接口上加注解）
