@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml  #  file-extension: yaml
+        namespace: 516fede8-e0bc-44f5-adb5-36d4ad342aa6 # default public
+        group: DEV_GROUP  # default DEFAULT_GROUP
+        ext-config[0]: # ext config file on dev env. [ common config in public,difference in ext]
+          dataId: ext-config.yml
+      discovery:  # nacos-config itself as a service registered on nacos server
+        server-addr: 127.0.0.1:8848
+        namespace: 516fede8-e0bc-44f5-adb5-36d4ad342aa6
+        group: DEFAULT_GROUP
+
+
+  # configured with file-extension ".properties"
+#spring.application.name=nacos-config
+#spring.cloud.nacos.config.server-addr=127.0.0.1:8848
+#spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
+#spring.cloud.nacos.config.file-extension=properties
+
+#server.port=8232   # configured in nacos server using filename like bootstrap.xxx

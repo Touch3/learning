@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: nacos-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+#        namespace: 516fede8-e0bc-44f5-adb5-36d4ad342aa6 # registered on dev env
+
+server:
+  port: 8100
