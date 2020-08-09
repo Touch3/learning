@@ -1,0 +1,16 @@
+server:
+  port: 8890 # springApplication 端口
+
+dubbo:
+  application:
+    name: ${spring.application.name}  # 配置服务名字
+  registry:
+    address: nacos://127.0.0.1:8848 # 配置nacos注册中心地址
+  protocol:
+    name: dubbo
+    port: 20880 # 设置协议-协议由提供方指定消费方被动接受
+spring:
+  main:
+    allow-bean-definition-overriding: true # 解决Bean重复定义问题
+  application:
+    name: dubbo-consumer
